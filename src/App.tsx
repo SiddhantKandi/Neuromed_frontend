@@ -18,6 +18,7 @@ function App() {
 
         <Route path='/doctors'>
           <Route index element={<Doctors />}/>
+          <Route path=':speciality' element={<Doctors />}/>
         </Route>
 
         <Route path='/login' element={<Login />}/>

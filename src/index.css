@@ -5,3 +5,7 @@
 .active{
     color : red;
 }
+
+::-webkit-scrollbar{
+    @apply hidden;
+}

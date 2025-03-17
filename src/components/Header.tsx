@@ -12,11 +12,11 @@ function Header() {
                 <p className="text-white ml-2">Simply browse through our extensive list of trusted doctors, 
                 schedule your appointment hassle-free.</p>
             </div>
-            <div className="flex flex-row mt-2 justify-between w-full items-center font-semibold relative">
+            <a href="#speciality" className="flex flex-row mt-2 justify-between w-full items-center font-semibold relative">
                 <button className="flex flex-row text-blue-500 font-semibold bg-white px-4 py-2 ml-4 rounded-full mt-2 transition-transform duration-300 hover:-translate-y-1 hover:cursor-pointer">Book Appointment
                 <FaArrowRight className="text-black text-2xl ml-4 mr-4"/>
                 </button>
-            </div>
+            </a>
         </div>
       
 
