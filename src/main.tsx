@@ -4,6 +4,12 @@ import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './app/store.ts'
+import { doctors } from './assets/assets_frontend/assets.ts'
+import { addDoctors } from './features/doctorSlice.ts'
+
+store.dispatch(addDoctors(doctors))
+
+
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
