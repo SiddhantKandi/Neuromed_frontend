@@ -5,7 +5,7 @@ import {useState} from 'react'
 function NavBar() {
 
   const navigate = useNavigate();
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const [token, setToken] = useState(true)
 
   const navigateToLogin = () => {
@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <div className="flex items-center justify-between py-4 mb-3 border-b border-b-gray-500 ">
       <div className="flex items-center space-x-2 ml-2">
-        <img className="h-12 w-auto" src={assets.newlogo} alt="Neuromed Logo" />
+        <img onClick={() => {navigate('/')}} className="h-12 w-auto" src={assets.newlogo} alt="Neuromed Logo" />
         <h1 className="text-3xl font-extrabold text-blue-600">NeuroMed</h1>
       </div>
 

@@ -11,7 +11,7 @@ function AppointmentMenu() {
       <div className="flex flex-col justify-center space-y-4 text-white w-2/3">
         <h2 className="text-3xl font-bold">Book Appointment With 100+ Trusted Doctors</h2>
         <button className="px-4 text-sm py-3 bg-white text-indigo-700 font-semibold rounded-full shadow-md w-40 hover:cursor-pointer transition-transform hover:scale-105 duration-300 ml-3"
-        onClick={() => navigate('/login')}>
+        onClick={() => {navigate('/login'); scrollTo(0,0)}}>
           Create Account
         </button>
       </div>

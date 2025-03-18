@@ -3,7 +3,7 @@
 function Doctors() {
   return (
     <div>
-      
+    
     </div>
   )
 }
