@@ -39,6 +39,8 @@ export const selectDoctorsBySpeciality = (speciality: string) => createSelector(
     (allDoctors) => allDoctors.filter((doctor : Doctor) => doctor.speciality === speciality)
 )
 
+console.log("Select doctors by speciality is : ",selectDoctorsBySpeciality);
+
 export const {addDoctors} = doctorSlice.actions;
 
 export default doctorSlice.reducer;
