@@ -1,17 +1,25 @@
-import { createSlice,createEntityAdapter, createSelector } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter, createSelector, EntityState } from "@reduxjs/toolkit";
+
+export interface Address {
+    line1: string;
+    line2: string;
+}
 
 export interface Doctor{
     _id:string;
     image:string;
     name:string;
     speciality:string;
+    degree:string;
+    experience:string;
+    about:string;
+    fees:number;
+    address:Address;
 }
 
 export interface RootState {
-    doctor : {
-     doctors : Doctor[];
-    }
- }
+    doctor: EntityState<Doctor, string>;
+  }
 
 const doctorAdapter = createEntityAdapter({
     selectId:(doctor:Doctor) => doctor._id,
@@ -32,14 +40,17 @@ const doctorSlice = createSlice({
 
 export const {
     selectAll:selectAllDoctors,
+    selectById:selectDoctorById,
+    selectIds:selectDoctorIds
 } = doctorAdapter.getSelectors((state: { doctor: ReturnType<typeof doctorSlice.reducer> }) => state.doctor);
+
 
 export const selectDoctorsBySpeciality = (speciality: string) => createSelector(
     [selectAllDoctors],
     (allDoctors) => allDoctors.filter((doctor : Doctor) => doctor.speciality === speciality)
 )
 
-console.log("Select doctors by speciality is : ",selectDoctorsBySpeciality);
+
 
 export const {addDoctors} = doctorSlice.actions;
 

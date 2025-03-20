@@ -16,11 +16,10 @@ function Doctors() {
 
   const filteredDoctor = useSelector(selectDoctorsBySpeciality(speciality));
 
-  const doctorSpeciality:Array<string>  = ["General physician","Gynecologist","Dermatologist","Pediatricians","Neurologist","Gastroenterologist"]
+  const doctorSpeciality:Array<string>  = ["General Physician","Gynecologist","Dermatologist","Pediatricians","Neurologist","Gastroenterologist"]
 
   const updateSpeciality = (newSpeciality: string) => {
     setSpeciality(newSpeciality);
-    console.log("Initial speciality is : ",speciality)
   }
 
 
