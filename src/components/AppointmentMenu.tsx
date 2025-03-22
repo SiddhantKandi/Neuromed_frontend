@@ -18,7 +18,7 @@ function AppointmentMenu() {
 
       {/* Right Section */}
       <div className="w-1/3 flex justify-center">
-        <img className="h-64 object-contain" src={assets.appointment_img} alt="Appointment Image"/>
+        <img className="h-64 object-contain " src={assets.appointment_img} alt="Appointment Image"/>
       </div>
     </div>
   )
