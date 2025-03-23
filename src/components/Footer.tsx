@@ -5,7 +5,7 @@ function Footer() {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center">
-    <div className="flex items-center justify-between py-4 mb-3 ml-6 mt-8 mr-6">
+    <div className="flex items-center justify-between py-4 mb-3 mt-8 ml-6 mr-6">
       {/* Left Section*/}
       <div className="w-8/12">
         <img className="h-12 w-auto" src={assets.newlogo} alt="Neuromed Logo" />
