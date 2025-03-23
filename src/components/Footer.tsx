@@ -1,6 +1,8 @@
 import { assets } from "../assets/assets_frontend/assets"
+import { useNavigate } from "react-router-dom"
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center">
     <div className="flex items-center justify-between py-4 mb-3 ml-6 mt-8 mr-6">
@@ -15,10 +17,10 @@ function Footer() {
         {/* Center Section */}
         <h1 className="text-2xl ml-4 mb-4">Company</h1>
         <ul className="flex flex-col items-center space-y-4 ml-4">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Contact us</li>
-        <li>Private Policy</li>
+          <li className = "hover:cursor-pointer" onClick={() => navigate('/')}>Home</li>
+          <li className = "hover:cursor-pointer" onClick={() => navigate('/about')}>About us</li>
+          <li className = "hover:cursor-pointer" onClick={() => navigate('/contact')}>Contact us</li>
+          <li>Private Policy</li>
         </ul>
       </div>
 

@@ -23,7 +23,7 @@ function App() {
 
         <Route path='/login' element={<Login />}/>
 
-        <Route path='contact' element={<Contact />}/>
+        <Route path='/contact' element={<Contact />}/>
 
         <Route path='/profile' element={<MyProfile />}/>
 

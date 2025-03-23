@@ -50,6 +50,11 @@ export const selectDoctorsBySpeciality = (speciality: string) => createSelector(
     (allDoctors) => allDoctors.filter((doctor : Doctor) => doctor.speciality === speciality)
 )
 
+export const selectDifferentDoctorswithSamespeciality = (speciality:string,_id:string) => createSelector(
+    [selectAllDoctors],
+    (allDoctors) => allDoctors.filter((doctor:Doctor) => doctor.speciality === speciality && doctor._id != _id)
+)
+
 
 
 export const {addDoctors} = doctorSlice.actions;
