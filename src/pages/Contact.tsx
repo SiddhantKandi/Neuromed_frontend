@@ -23,7 +23,7 @@ export default function ContactPage() {
     <>
         <div className='flex flex-row items-center mt-10 justify-center '>
           <div className='mr-5 w-4/12 ml-5 h-full  '>
-            <img className= "max-w-full h-full rounded-lg" src={assets.contact_image} alt="Contact Image"/>
+            <img className= "max-w-full ml-10 rounded-lg" src={assets.contact_image} alt="Contact Image"/>
           </div>
           <div className="max-w-2xl mx-auto p-6 bg-gray-200 rounded-lg shadow-md mt-10 w-8/12">
             <h2 className="text-2xl font-bold text-center mb-6">Contact Us</h2>

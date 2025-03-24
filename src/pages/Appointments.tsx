@@ -15,6 +15,8 @@ function Appointments() {
   const doctor = useSelector((state: RootState) =>
     selectDoctorById(state, doctorId)
   );
+  
+ 
 
   const doctorSpeciality:string = doctor.speciality;
 
