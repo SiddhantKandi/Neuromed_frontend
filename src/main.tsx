@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 import { doctors } from "./assets/assets_frontend/assets.ts";
 import { addDoctors } from "./features/doctors/doctorSlice.ts";
+import 'react-tooltip/dist/react-tooltip.css'
 
 store.dispatch(addDoctors(doctors));
 

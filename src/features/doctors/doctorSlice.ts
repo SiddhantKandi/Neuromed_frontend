@@ -1,4 +1,5 @@
-import { createSlice, createEntityAdapter, createSelector, EntityState } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter, createSelector,PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 
 export interface Address {
     line1: string;
@@ -17,10 +18,6 @@ export interface Doctor{
     address:Address;
 }
 
-export interface RootState {
-    doctor: EntityState<Doctor, string>;
-  }
-
 const doctorAdapter = createEntityAdapter({
     selectId:(doctor:Doctor) => doctor._id,
     sortComparer:(a,b) => a.name.localeCompare(b.name)
@@ -32,7 +29,7 @@ const doctorSlice = createSlice({
     name:"doctors",
     initialState,
     reducers:{
-        addDoctors: (state,action) => {
+        addDoctors: (state,action : PayloadAction<Doctor[]>) => {
             doctorAdapter.setAll(state,action.payload)
         }
     }
@@ -42,7 +39,7 @@ export const {
     selectAll:selectAllDoctors,
     selectById:selectDoctorById,
     selectIds:selectDoctorIds
-} = doctorAdapter.getSelectors((state: { doctor: ReturnType<typeof doctorSlice.reducer> }) => state.doctor);
+} = doctorAdapter.getSelectors((state: RootState) => state.doctor);
 
 
 export const selectDoctorsBySpeciality = (speciality: string) => createSelector(

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "../../app/store";
 
 interface User {
     name: string;
@@ -15,7 +16,7 @@ const initialState : User[]  = [{
     contact:"1234567890",
     address:"xyzabc",
     gender:"male",
-    birthDate:"22/05/2003"
+    birthDate:"22 May, 2003"
 }];
    
 const userSlice = createSlice({
@@ -23,5 +24,7 @@ const userSlice = createSlice({
     initialState,
     reducers : {}
 });
+
+export const selectUser = (state: RootState) => state.user;
 
 export default userSlice.reducer;
