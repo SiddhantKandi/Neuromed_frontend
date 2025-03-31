@@ -7,7 +7,7 @@ function MyAppointments() {
   return (
     <div className="flex flex-col justify-between mt-10 items-start ml-10 mr-10">
       <h1 className="text-lg font-semibold">My Appointments</h1>
-      {doctors.slice(0, 2).map((doctor, index) => (
+      {doctors.slice(0, 3).map((doctor, index) => (
         <div key={index} className="w-full mb-10">
           <hr className="border-t border-gray-300 w-full mt-4 mb-6 mr-2" />
           
@@ -32,10 +32,10 @@ function MyAppointments() {
 
             {/* Right: Buttons (Moved to Right) */}
             <div className="flex flex-col items-end ml-auto w-[220px]">
-              <button className="px-6 py-2 w-full bg-indigo-400 rounded-full text-white hover:bg-indigo-500">
+              <button className="px-6 py-2 sm:min-w-48 w-full bg-indigo-400 rounded-full text-white hover:bg-indigo-500">
                 Pay here
               </button>
-              <button className="px-6 py-2 w-full rounded-full border border-gray-400 mt-5 hover:bg-gray-200">
+              <button className="px-6 py-2 sm:min-w-48 w-full rounded-full border border-gray-400 mt-5 hover:bg-red-500">
                 Cancel Appointment
               </button>
             </div>
