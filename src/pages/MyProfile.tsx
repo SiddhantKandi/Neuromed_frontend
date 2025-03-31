@@ -1,11 +1,11 @@
 import { assets } from "../assets/assets_frontend/assets"
-import { useSelector } from "react-redux"
+import { useAppSelector } from "../app/hooks";
 import { selectUser } from "../features/users/userSlice"
 import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 
 function MyProfile() {
-  const user = useSelector(selectUser);
+  const user = useAppSelector(selectUser);
   const [email, setEmail] = useState(user[0]?.email);
   const [phone, setPhone] = useState(user[0]?.contact);
   const [address, setAddress] = useState(user[0]?.address);

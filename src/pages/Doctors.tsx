@@ -4,9 +4,9 @@ import {
   selectAllDoctors,
   selectDoctorsBySpeciality,
 } from "../features/doctors/doctorSlice";
-import { useSelector } from "react-redux";
 import { GoDotFill } from "react-icons/go";
 import { useState } from "react";
+import { useAppSelector } from "../app/hooks";
 
 function Doctors() {
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ function Doctors() {
   const initialSpeciality = useParams().speciality;
   const [speciality, setSpeciality] = useState(initialSpeciality || "");
 
-  const doctors: Doctor[] = useSelector(selectAllDoctors);
+  const doctors: Doctor[] = useAppSelector(selectAllDoctors);
 
-  const filteredDoctor = useSelector(selectDoctorsBySpeciality(speciality));
+  const filteredDoctor = useAppSelector(selectDoctorsBySpeciality(speciality));
 
   const doctorSpeciality: Array<string> = [
     "General Physician",

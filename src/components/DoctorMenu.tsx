@@ -1,13 +1,13 @@
 import { GoDotFill } from "react-icons/go";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../app/hooks";
 import { Doctor, selectAllDoctors } from "../features/doctors/doctorSlice";
 
 function DoctorMenu() {
   const navigate = useNavigate();
 
-  const doctors: Doctor[] = useSelector(selectAllDoctors);
+  const doctors: Doctor[] = useAppSelector(selectAllDoctors);
 
   return (
     <div className="flex flex-col items-center mt-10 mb-10">

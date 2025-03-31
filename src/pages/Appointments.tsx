@@ -1,18 +1,19 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectDoctorById, RootState } from "../features/doctors/doctorSlice";
+import { useAppSelector } from "../app/hooks";
+import { selectDoctorById } from "../features/doctors/doctorSlice";
 import { assets } from "../assets/assets_frontend/assets";
 import CustomDatePicker from "../components/CustomDatePicker";
 import { selectDifferentDoctorswithSamespeciality } from "../features/doctors/doctorSlice";
 import { useNavigate } from "react-router-dom";
 import { GoDotFill } from "react-icons/go";
+import { RootState } from "../app/store";
 
 function Appointments() {
   const { docId } = useParams<{ docId: string }>();
 
   const doctorId: string = docId ?? "";
 
-  const doctor = useSelector((state: RootState) =>
+  const doctor = useAppSelector((state: RootState) =>
     selectDoctorById(state, doctorId)
   );
   
@@ -22,7 +23,7 @@ function Appointments() {
 
   const navigate = useNavigate();
 
-  const filteredDoctor= useSelector(selectDifferentDoctorswithSamespeciality(doctorSpeciality,doctorId));
+  const filteredDoctor= useAppSelector(selectDifferentDoctorswithSamespeciality(doctorSpeciality,doctorId));
 
   return (
     <div className="flex items-center flex-col">

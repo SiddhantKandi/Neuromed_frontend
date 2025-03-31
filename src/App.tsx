@@ -9,6 +9,7 @@ import Appointments from './pages/Appointments';
 import Layout from './components/Layout'
 import About from './pages/About'
 import Error from './pages/Error'
+import Signup from './pages/Signup'
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         </Route>
 
         <Route path='/login' element={<Login />}/>
+
+        <Route path='/signup' element={<Signup />}/>
 
         <Route path='/contact' element={<Contact />}/>
 
